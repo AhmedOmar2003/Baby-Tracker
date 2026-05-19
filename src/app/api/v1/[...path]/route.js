@@ -1223,13 +1223,17 @@ async function handlePut(path, url, body) {
   const [resource, action, id] = normalizePath(path);
 
   if (resource === 'user' && action === 'update' && id) {
+    const { data: currentUser, error: currentUserError } = await supabaseServer.auth.admin.getUserById(id);
+    if (currentUserError || !currentUser?.user) return jsonMessage('User not found', 404);
+    const existingMeta = currentUser.user.user_metadata || {};
     const updatePayload = {};
     if (body.first_name !== undefined || body.last_name !== undefined || body.phone_number !== undefined || body.role !== undefined) {
       updatePayload.user_metadata = {
-        first_name: body.first_name ?? '',
-        last_name: body.last_name ?? '',
-        phone_number: body.phone_number ?? '',
-        role: body.role ?? 'user',
+        ...existingMeta,
+        first_name: body.first_name ?? existingMeta.first_name ?? '',
+        last_name: body.last_name ?? existingMeta.last_name ?? '',
+        phone_number: body.phone_number ?? existingMeta.phone_number ?? '',
+        role: body.role ?? existingMeta.role ?? 'user',
       };
     }
     if (body.email !== undefined) updatePayload.email = body.email;
@@ -1244,6 +1248,10 @@ async function handlePut(path, url, body) {
     const { data, error } = await supabaseServer.auth.admin.getUserById(id);
     if (error || !data?.user) return jsonMessage('Doctor not found', 404);
     const existingMeta = data.user.user_metadata || {};
+    const nextImageUrl =
+      typeof body.image_url === 'string' && body.image_url.trim()
+        ? body.image_url.trim()
+        : existingMeta.image_url ?? null;
     const updatePayload = {
       user_metadata: {
         ...existingMeta,
@@ -1256,7 +1264,7 @@ async function handlePut(path, url, body) {
         bio: body.bio ?? existingMeta.bio ?? '',
         rating: body.rating ?? existingMeta.rating ?? existingMeta.rate ?? 0,
         verified: body.verified !== undefined ? toBool(body.verified) : existingMeta.verified ?? false,
-        image_url: body.image_url ?? existingMeta.image_url ?? null,
+        image_url: nextImageUrl,
       },
     };
     if (body.email !== undefined) updatePayload.email = body.email;

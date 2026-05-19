@@ -58,6 +58,7 @@ function EditDoctorModal({ docId, onClose, onSave }) {
       await axios.put(`${host}/user/update/${docId}`, {
         first_name: form.first_name, last_name: form.last_name,
         email: form.email, phone_number: form.phone_number,
+        role: 'Doctor',
       }, { headers: { 'Content-Type': 'application/json' }, withCredentials: true });
 
       await axios.put(`${host}/doctor/update/${docId}`, {

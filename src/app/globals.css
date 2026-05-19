@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 :root {
@@ -88,14 +89,16 @@ body {
   animation: pageEnter 0.12s ease both;
 }
 
-/* ========== GPU ACCELERATION & SMOOTH SCROLL ========== */
+/* ========== PERFORMANCE & SMOOTH SCROLL ========== */
 html {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -103,17 +106,28 @@ body {
   overflow-x: hidden;
 }
 
-/* Hardware-accelerate interactive elements */
-a, button, input, select, textarea {
-  -webkit-tap-highlight-color: transparent;
-  will-change: auto;
+/* Eliminate 300ms tap delay & remove highlight on mobile */
+a, button, input, select, textarea, label {
+  touch-action: manipulation;
 }
 
-/* Smooth scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f1f3f8; }
-::-webkit-scrollbar-thumb { background: var(--main-color); border-radius: 3px; opacity: 0.6; }
-::-webkit-scrollbar-thumb:hover { opacity: 1; }
+/* Smooth scrollbar — desktop only */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #f1f3f8; }
+  ::-webkit-scrollbar-thumb { background: var(--main-color); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--second-color); }
+}
+
+/* Respect user motion preferences — stop all animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 
 /* ========== DESIGN SYSTEM: BUTTONS ========== */
 

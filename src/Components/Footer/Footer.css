@@ -81,7 +81,7 @@
 }
 .footer-links li a:hover {
   color: #3640ce;
-  transform: translateX(4px);
+  transform: translateX(-4px);
 }
 
 .fl-icon {
@@ -201,4 +201,11 @@
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+@media (max-width: 380px) {
+  .footer-main { padding: 2rem 0 1.5rem; }
+  .footer-heading { font-size: 0.85rem; }
+  .footer-links li a { font-size: 0.82rem; }
+  .footer-bottom-links { gap: 1rem; }
 }

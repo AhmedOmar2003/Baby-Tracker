@@ -8,7 +8,8 @@ const cairoFont = Cairo({
   subsets: ['latin', 'arabic'],
   display: 'swap',
   preload: true,
-  weight: ['400', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
+  adjustFontFallback: false,
 });
 
 export const metadata = {
@@ -19,12 +20,16 @@ export const metadata = {
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 5,
+  userScalable: true,
   themeColor: '#3640ce',
+  colorScheme: 'light',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="ar" dir="rtl">
       <body className={cairoFont.variable}>
         <ClientShell>{children}</ClientShell>
       </body>

@@ -23,21 +23,32 @@ nav .container a {
   z-index: 1001; /* Ensure it's above the background */
 }
 nav .container a img {
-  max-width: 200px;
-  height: 60px;
+  max-width: 180px;
+  height: 52px;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
-@media (max-width: 768px) {
-  nav .container img {
-    width: 180px !important;
-    height: 80px;
+@media (max-width: 480px) {
+  nav .container a img {
+    max-width: 140px;
+    height: 44px;
   }
 }
 .barsMenu {
-  font-size: 40px;
+  font-size: 32px;
   color: var(--main-color);
   cursor: pointer;
+  /* Minimum 44px touch target */
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+.barsMenu:hover {
+  background: rgba(54,64,206,0.06);
 }
 
 /*ul-mobile*/
@@ -67,6 +78,7 @@ nav .container a img {
   align-items: center;
   gap: 15px;
   padding: 1rem 2rem;
+  min-height: 52px;
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--section-head-color);
@@ -78,7 +90,7 @@ nav .container a img {
   background: rgba(54,64,206,0.05);
   color: var(--main-color);
 }
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .barsMenu {
     display: none;
   }
@@ -92,7 +104,7 @@ nav .container #uls ul,
   align-items: center;
   margin-top: 8px;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   nav .container #uls ul {
     display: none;
   }
@@ -339,7 +351,7 @@ nav .container #uls ul li a.active-link::after {
   box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .mobile-user-section {
     display: flex;
     flex-direction: column;

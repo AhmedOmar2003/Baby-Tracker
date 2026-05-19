@@ -551,7 +551,7 @@
 
 @media (max-width: 768px) {
   .admin-mobile-header { display: flex; }
-  
+
   .admin-sidebar {
     position: fixed;
     top: 0;
@@ -568,11 +568,35 @@
 
   .admin-content-wrapper {
     padding: 1rem;
-    padding-top: 5rem; /* space for mobile header */
+    padding-top: 4.5rem;
   }
 
   .content {
-    padding: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+
+  /* Reduce blur on mobile for performance */
+  .admin-sidebar {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .topbar-search {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-content-wrapper {
+    padding: 0.75rem;
+    padding-top: 4.25rem;
+  }
+  .content {
+    padding: 1rem;
+  }
+  .admin-mobile-header {
+    padding: 0.75rem 1rem;
   }
 }
 

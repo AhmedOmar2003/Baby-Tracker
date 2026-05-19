@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js';
+import { supabaseServer } from '@/lib/supabaseServer';
 
 // Same hash function as lib/userIdentity.js — inlined to avoid localStorage
 function deriveAppUserId(authId) {
@@ -14,15 +14,9 @@ function normalizeRole(role) {
   return String(role || '').trim().toLowerCase();
 }
 
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_ROLE_KEY,
-  { auth: { autoRefreshToken: false, persistSession: false } }
-);
-
 export async function GET() {
   try {
-    const { data, error } = await supabaseAdmin.auth.admin.listUsers();
+    const { data, error } = await supabaseServer.auth.admin.listUsers();
     if (error) throw error;
 
     // Keep only regular users for the Users section
@@ -62,7 +56,7 @@ export async function POST(request) {
       return Response.json({ success: false, error: 'Email and password are required.' }, { status: 400 });
     }
 
-    const { data, error } = await supabaseAdmin.auth.admin.createUser({
+    const { data, error } = await supabaseServer.auth.admin.createUser({
       email,
       password,
       email_confirm: true,

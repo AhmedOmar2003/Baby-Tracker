@@ -1,10 +1,4 @@
-import { createClient } from '@supabase/supabase-js';
-
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_ROLE_KEY,
-  { auth: { autoRefreshToken: false, persistSession: false } }
-);
+import { supabaseServer } from '@/lib/supabaseServer';
 
 export async function PUT(request, { params }) {
   try {
@@ -17,7 +11,7 @@ export async function PUT(request, { params }) {
     if (email) updateData.email = email;
     if (password) updateData.password = password;
 
-    const { data, error } = await supabaseAdmin.auth.admin.updateUserById(id, updateData);
+    const { data, error } = await supabaseServer.auth.admin.updateUserById(id, updateData);
     if (error) throw error;
 
     return Response.json({ success: true, user: data.user });
@@ -29,7 +23,7 @@ export async function PUT(request, { params }) {
 export async function DELETE(request, { params }) {
   try {
     const { id } = params;
-    const { error } = await supabaseAdmin.auth.admin.deleteUser(id);
+    const { error } = await supabaseServer.auth.admin.deleteUser(id);
     if (error) throw error;
 
     return Response.json({ success: true, message: 'User deleted successfully.' });

@@ -50,7 +50,6 @@ nav .container a img {
   background: rgba(54,64,206,0.06);
 }
 
-/*ul-mobile*/
 #uls-mobile ul {
   position: fixed;
   flex-direction: column;
@@ -65,29 +64,43 @@ nav .container a img {
   transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 1000;
   box-shadow: 4px 0 20px rgba(54, 64, 206, 0.1);
+  padding: 1.5rem 0;
+  gap: 0.25rem;
 }
 #uls-mobile ul.menuListMobile {
   left: 0;
 }
 #uls-mobile ul li {
-  text-align: center;
+  width: 100%;
 }
 #uls-mobile ul li a {
   display: flex;
   align-items: center;
   gap: 15px;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
+  margin: 0 1rem;
   min-height: 52px;
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--section-head-color);
-  border-bottom: 1px solid rgba(0,0,0,0.04);
-  transition: background 0.2s ease, color 0.2s ease;
+  border-radius: 16px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+#uls-mobile ul li a svg {
+  font-size: 1.3rem;
+  opacity: 0.8;
+  color: #888;
+  transition: color 0.2s ease;
 }
 #uls-mobile ul li a:hover,
 #uls-mobile ul li a.active-link {
-  background: rgba(54,64,206,0.05);
+  background: rgba(54,64,206,0.06);
   color: var(--main-color);
+}
+#uls-mobile ul li a:hover svg,
+#uls-mobile ul li a.active-link svg {
+  color: var(--main-color);
+  opacity: 1;
 }
 @media (min-width: 1024px) {
   .barsMenu {
@@ -354,34 +367,41 @@ nav .container #uls ul li a.active-link::after {
   .mobile-user-section {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     margin-top: 1rem;
     width: 100%;
+    gap: 0.5rem;
   }
 
   .mobile-avatar {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1rem;
+    padding: 0 1rem 1.5rem;
     color: var(--section-head-color);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.1rem;
-    justify-content: center;
   }
 
   .mobile-logout-btn {
-    background: linear-gradient(135deg, #ff6b6b, #ff4757);
-    color: white;
-    border: none;
+    background: transparent;
+    color: #ff4757;
+    border: 2px solid rgba(255, 71, 87, 0.2);
     padding: 1rem;
-    border-radius: 12px;
+    border-radius: 16px;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 600;
-    width: 100%;
-    margin-top: 1rem;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    width: calc(100% - 2rem);
+    margin: 1rem auto 0;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mobile-logout-btn:hover {
+    background: #ff4757;
+    color: white;
   }
 }

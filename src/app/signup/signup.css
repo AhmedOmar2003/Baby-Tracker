@@ -12,6 +12,7 @@
   
   .container {
     display: flex;
+    flex-direction: row-reverse;
     align-items: stretch;
     justify-content: center;
     gap: 2rem;

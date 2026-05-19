@@ -1,0 +1,91 @@
+.profile-favorites-section {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.favorites-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.favorites-header h2 {
+  font-size: 1.5rem;
+  color: var(--section-head-color);
+  font-weight: 800;
+  margin: 0;
+}
+
+.btn-clear-all {
+  background: rgba(255, 71, 87, 0.1);
+  color: #ff4757;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-clear-all:hover {
+  background: #ff4757;
+  color: white;
+}
+
+.favorites-filters {
+  margin-bottom: 2rem;
+}
+
+.fav-dropdown {
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  border: 1.5px solid rgba(54, 64, 206, 0.15);
+  font-family: var(--font-Cairo);
+  font-weight: 600;
+  color: var(--section-head-color);
+  outline: none;
+  width: 100%;
+  max-width: 250px;
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.favorites-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fav-card {
+  margin-bottom: 0 !important;
+  border: 1px solid rgba(54, 64, 206, 0.08) !important;
+}
+
+.fav-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: rgba(54, 64, 206, 0.1);
+  color: var(--main-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 999px;
+  text-transform: capitalize;
+  margin-top: 0.5rem;
+}
+
+.fav-img {
+  width: 90px !important;
+  height: 90px !important;
+  border-radius: 12px !important;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #94a3b8;
+  font-weight: 600;
+}

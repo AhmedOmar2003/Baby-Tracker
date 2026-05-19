@@ -1,0 +1,259 @@
+/* ============================================================
+   SHARED PAGE STYLES — applied to all listing pages
+   (Doses, Vaccines, Medicine, Doctors, Articles)
+   ============================================================ */
+
+/* ---- Page wrapper ---- */
+.page-section {
+  padding: 2.5rem 0 4rem;
+}
+
+/* ---- Page heading ---- */
+.page-heading {
+  text-align: center;
+  margin-bottom: 2.5rem;
+
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 800;
+    color: var(--section-head-color);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: var(--text-color);
+    font-size: 1rem;
+  }
+}
+
+/* ---- Search bar ---- */
+.page-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  position: relative;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .search-icon {
+    position: absolute;
+    left: 1rem;
+    color: var(--main-color);
+    opacity: 0.7;
+    font-size: 1.1rem;
+    pointer-events: none;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.9rem 1rem 0.9rem 3rem;
+    border: 1.5px solid rgba(54, 64, 206, 0.2);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--section-head-color);
+    font-size: 0.95rem;
+    font-family: var(--font-Cairo);
+    backdrop-filter: blur(8px);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+
+    &:focus {
+      outline: none;
+      border-color: var(--main-color);
+      box-shadow: 0 0 0 4px rgba(54, 64, 206, 0.08);
+      background: white;
+    }
+
+    &::placeholder { color: #bbb; }
+  }
+}
+
+/* ---- Tab buttons ---- */
+.page-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+
+  button {
+    padding: 0.65rem 1.8rem;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--main-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: var(--font-Cairo);
+    white-space: nowrap;
+
+    &.active-tab {
+      background: var(--gradient-primary);
+      color: white;
+      border-color: transparent;
+      box-shadow: var(--shadow-primary-sm);
+    }
+
+    &:not(.active-tab) {
+      background: transparent;
+      color: var(--main-color);
+    }
+
+    &:hover:not(.active-tab) {
+      background: var(--fourth-color);
+    }
+  }
+
+  @media (max-width: 480px) {
+    gap: 0.5rem;
+    button {
+      padding: 0.55rem 1.1rem;
+      font-size: 0.85rem;
+    }
+  }
+}
+
+/* ---- Cards grid ---- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+
+  @media (max-width: 1024px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 640px)  { grid-template-columns: 1fr; }
+}
+
+/* ---- Unified List Card ---- */
+.ds-list-card {
+  display: flex;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.04);
+  padding: 1.25rem;
+  gap: 1.5rem;
+  align-items: center;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  margin-bottom: 1.25rem;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(54, 64, 206, 0.15);
+  }
+
+  .ds-list-img {
+    width: 120px;
+    height: 120px;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: block;
+  }
+
+  .ds-list-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--section-head-color);
+      margin: 0 0 0.4rem;
+    }
+
+    p {
+      color: var(--text-color);
+      font-size: 0.95rem;
+      margin: 0.2rem 0;
+      line-height: 1.5;
+    }
+
+    .meta-text {
+      font-weight: 600;
+      color: var(--main-color);
+    }
+  }
+
+  .ds-list-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+    min-width: 140px;
+
+    .heart-icon {
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: #ccc;
+      transition: color var(--transition-fast), transform 0.2s;
+      
+      &:hover { transform: scale(1.1); }
+      &.liked { color: var(--main-color); }
+    }
+
+    .btn-action {
+      background: var(--gradient-primary);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: var(--shadow-primary-sm);
+      transition: all var(--transition-fast);
+      text-align: center;
+      width: 100%;
+
+      &:hover {
+        filter: brightness(1.1);
+        transform: translateY(-1px);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+
+    .ds-list-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: var(--radius-md) var(--radius-md) 0 0;
+    }
+    
+    .ds-list-actions {
+      width: 100%;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+
+      .btn-action { width: auto; flex: 1; }
+    }
+  }
+}
+
+/* ---- Empty state ---- */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-color);
+
+  .empty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.4;
+  }
+
+  p { font-size: 1.1rem; }
+}

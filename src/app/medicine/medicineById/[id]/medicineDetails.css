@@ -1,0 +1,218 @@
+/* ── Medicine Detail Page ── */
+.medicine-detail-page {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding-bottom: 5rem;
+}
+
+/* Back button */
+.med-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #7b85b5;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.45rem 0;
+  transition: color 0.2s, gap 0.2s;
+}
+.med-back-btn:hover { color: var(--main-color); gap: 0.7rem; }
+.med-back-btn svg { font-size: 1.2rem; }
+
+/* Hero card */
+.med-hero-card {
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.med-image-wrap {
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
+  background: #f0f3ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.med-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.med-hero-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.med-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.med-badge {
+  padding: 0.28rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.med-badge-category {
+  background: var(--fourth-color, #eef0ff);
+  color: var(--main-color);
+}
+.med-badge-rx {
+  background: #fff3f3;
+  color: #e53935;
+}
+.med-badge-otc {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.med-name {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 800;
+  color: var(--section-head-color);
+  margin: 0 0 0.4rem;
+  line-height: 1.25;
+}
+.med-manufacturer {
+  font-size: 0.95rem;
+  color: #7b85b5;
+  font-weight: 500;
+  margin: 0 0 1.5rem;
+}
+
+.med-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1rem;
+}
+.med-meta-item {
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.med-meta-label {
+  display: block;
+  font-size: 0.73rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #94a3b8;
+  margin-bottom: 0.3rem;
+}
+.med-meta-value {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--section-head-color);
+}
+.med-meta-value.price { color: var(--main-color); }
+
+/* Info cards */
+.med-info-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.75rem 2.25rem;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  margin-bottom: 1.25rem;
+}
+.med-info-card:last-child { margin-bottom: 0; }
+
+.med-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--section-head-color);
+  margin: 0 0 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.med-section-title svg {
+  color: var(--main-color);
+  font-size: 1.15rem;
+}
+
+.med-description {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #44556a;
+  margin: 0;
+}
+
+.med-side-effects-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.med-side-effects-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #fff3f3;
+  color: #c62828;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(229,57,53,0.1);
+}
+.med-side-effects-list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e53935;
+  flex-shrink: 0;
+}
+
+.med-dosage-text {
+  font-size: 1.02rem;
+  color: #44556a;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.med-dosage-text svg { color: var(--main-color); font-size: 1.2rem; }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .med-hero-card { flex-direction: column; gap: 1.5rem; padding: 1.5rem; }
+  .med-image-wrap { width: 130px; height: 130px; }
+  .med-info-card { padding: 1.25rem; border-radius: 16px; }
+  .med-name { font-size: 1.4rem; }
+  .med-meta-grid { grid-template-columns: repeat(2, 1fr); }
+  .med-side-effects-list { gap: 0.4rem; }
+}
+@media (max-width: 380px) {
+  .med-hero-card { padding: 1rem; }
+  .med-meta-grid { grid-template-columns: 1fr; }
+}

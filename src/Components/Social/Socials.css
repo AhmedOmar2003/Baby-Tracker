@@ -1,0 +1,37 @@
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  a {
+    > div {
+      padding: 0.6rem;
+      border: 2px solid #ddd;
+      border-radius: 50%;
+      display: flex;
+      justify-self: center;
+      align-items: center;
+      background: #fff;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+      img {
+        width: 32px;
+        height: 32px;
+        padding: 0.2rem;
+        transition: transform 0.3s ease;
+      }
+    }
+    
+    &:hover > div {
+      border-color: var(--main-color);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(54, 64, 206, 0.15);
+      
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

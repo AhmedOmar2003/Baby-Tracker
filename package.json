@@ -1,0 +1,42 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "seed:super-admin": "node scripts/seed-super-admin.mjs"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@supabase/supabase-js": "^2.105.4",
+    "axios": "^1.8.4",
+    "next": "15.2.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icon": "^1.0.0",
+    "react-icons": "^5.5.0",
+    "react-spinners": "^0.16.1",
+    "react-toastify": "^11.0.5",
+    "sweetalert2": "^11.19.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.4"
+  },
+  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohamed-Dawood/Graduation-Project-Frontend.git"
+  },
+  "author": "Mohamed Dawood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mohamed-Dawood/Graduation-Project-Frontend/issues"
+  },
+  "homepage": "https://github.com/Mohamed-Dawood/Graduation-Project-Frontend#readme"
+}

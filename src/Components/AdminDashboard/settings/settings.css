@@ -1,0 +1,155 @@
+.admin-settings-page {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.settings-header {
+  margin-bottom: 2.5rem;
+  
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--section-head-color, #1a1a2e);
+    margin: 0 0 0.5rem;
+  }
+  
+  p {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+.settings-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.settings-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(54, 64, 206, 0.05);
+  border: 1px solid rgba(54, 64, 206, 0.08);
+  overflow: hidden;
+}
+
+.card-header {
+  background: rgba(247, 248, 253, 0.8);
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(54, 64, 206, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--section-head-color);
+  }
+
+  .header-icon {
+    font-size: 1.4rem;
+    color: var(--main-color, #3640ce);
+  }
+}
+
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ── Site Info Styles ── */
+.info-group {
+  label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.4rem;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--section-head-color);
+
+    &.highlight {
+      color: var(--main-color);
+      background: rgba(54, 64, 206, 0.06);
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      display: inline-block;
+    }
+  }
+}
+
+/* ── Form Styles ── */
+.password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.input-group {
+  label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-family: var(--font-Cairo);
+    transition: all 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--main-color);
+      box-shadow: 0 0 0 3px rgba(54, 64, 206, 0.1);
+    }
+  }
+}
+
+.save-btn {
+  margin-top: 0.5rem;
+  padding: 0.9rem;
+  background: var(--gradient-primary, linear-gradient(135deg, #3640ce, #6872e5));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(54, 64, 206, 0.2);
+
+  &:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .settings-content {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,28 @@
+.addMedicine {
+  textarea {
+    width: 47.5%;
+    border: 1px solid var(--main-color);
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    height: 150px;
+    resize: none;
+    padding: .625rem;
+    caret-color: var(--main-color);
+    &:focus {
+      outline: none;
+    }
+  }
+}
+@media(max-width: 768px) {
+  .addMedicine {
+    .textArea {
+      margin-top: 10px;
+    }
+    textarea {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+
+.sidebar {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      background-color: #fff;
+      padding: 1.25rem 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.02);
+
+      &:hover {
+        transform: translateX(5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      }
+
+      .iconAndText {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        span {
+          font-weight: 600;
+          color: var(--section-head-color);
+          transition: all 0.3s ease;
+        }
+      }
+      svg {
+        color: var(--main-color);
+        font-size: 22px;
+        transition: all 0.3s ease;
+      }
+      .arrow {
+        color: #ccc;
+      }
+      
+      &.logOut {
+        background-color: rgba(255, 0, 0, 0.03);
+        &:hover {
+          background-color: rgba(255, 0, 0, 0.08);
+        }
+        svg {
+          color: #ff4757;
+        }
+        .iconAndText span {
+          color: #ff4757;
+        }
+      }
+    }
+  }
+}

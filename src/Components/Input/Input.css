@@ -1,0 +1,72 @@
+.input {
+  margin: 1rem 0;
+  label {
+    margin-bottom: 0.5rem;
+    display: block;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--section-head-color);
+  }
+  > div {
+    display: flex;
+    position: relative;
+    transition: all 0.3s ease;
+    
+    svg {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 1.2rem;
+      color: #aaa;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+    
+    input {
+      width: 100%;
+      padding: 0.8rem 2.8rem 0.8rem 3rem;
+      border: 2px solid transparent;
+      background: var(--fifth-color);
+      border-radius: 12px;
+      font-size: 1rem;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      color: #aaa;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      transition: color 0.2s;
+      z-index: 2;
+    }
+    .toggle-password:hover { color: var(--main-color); }
+    
+    input::placeholder {
+      color: #aaa;
+    }
+
+    &:focus-within {
+      svg {
+        color: var(--main-color);
+        transform: translateY(-50%) scale(1.1);
+      }
+      input {
+        background: #fff;
+        border-color: var(--main-color);
+        box-shadow: 0 4px 15px rgba(54, 64, 206, 0.1);
+      }
+    }
+  }
+}

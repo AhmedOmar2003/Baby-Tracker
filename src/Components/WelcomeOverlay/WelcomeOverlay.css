@@ -1,0 +1,134 @@
+/* ── Welcome Overlay ── */
+.wo-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(54, 64, 206, 0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  animation: wo-fadein 0.3s ease forwards;
+  cursor: pointer;
+}
+.wo-overlay.wo-leaving {
+  animation: wo-fadeout 0.35s ease forwards;
+}
+
+@keyframes wo-fadein  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes wo-fadeout { from { opacity: 1; } to { opacity: 0; } }
+
+/* Card */
+.wo-card {
+  background: #fff;
+  border-radius: 28px;
+  padding: 2.75rem 3rem;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(54, 64, 206, 0.22), 0 0 0 1px rgba(255,255,255,0.8);
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  animation: wo-slideup 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.wo-overlay.wo-leaving .wo-card {
+  animation: wo-slidedown 0.3s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+@keyframes wo-slideup   { from { opacity: 0; transform: translateY(24px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes wo-slidedown { from { opacity: 1; transform: translateY(0) scale(1); }        to { opacity: 0; transform: translateY(16px) scale(0.97); } }
+
+/* SVG checkmark */
+.wo-svg {
+  display: block;
+  margin: 0 auto 1.5rem;
+  width: 80px;
+  height: 80px;
+}
+.wo-circle-bg {
+  fill: none;
+  stroke: #e8f5e9;
+  stroke-width: 3;
+}
+.wo-circle-anim {
+  fill: none;
+  stroke: #43a047;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  transform-origin: center;
+  transform: rotate(-90deg);
+  animation: wo-circle 0.55s ease 0.15s forwards;
+}
+.wo-check {
+  fill: none;
+  stroke: #43a047;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: wo-check 0.3s ease 0.65s forwards;
+}
+
+@keyframes wo-circle { to { stroke-dashoffset: 0; } }
+@keyframes wo-check  { to { stroke-dashoffset: 0; } }
+
+/* Text */
+.wo-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--section-head-color);
+  margin: 0 0 0.5rem;
+  animation: wo-textfade 0.3s ease 0.75s both;
+}
+.wo-name {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.wo-subtitle {
+  font-size: 0.97rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+  animation: wo-textfade 0.3s ease 0.85s both;
+}
+@keyframes wo-textfade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* Dismiss hint */
+.wo-hint {
+  font-size: 0.78rem;
+  color: #bbb;
+  margin: 0;
+  animation: wo-textfade 0.3s ease 1.1s both;
+}
+
+/* Progress bar */
+.wo-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: var(--gradient-primary, linear-gradient(135deg, #3640ce, #65bcfb));
+  transform-origin: left;
+  animation: wo-progress 2.5s linear 0.2s both;
+}
+@keyframes wo-progress { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+
+/* Decorative gradient blob */
+.wo-blob {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(54,64,206,0.07) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}

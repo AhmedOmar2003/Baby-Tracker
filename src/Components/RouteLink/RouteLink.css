@@ -1,0 +1,27 @@
+.routeLink {
+  a {
+    display: inline-block;
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    cursor: pointer;
+    padding: 0.8rem 1.5rem;
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(54, 64, 206, 0.3);
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(54, 64, 206, 0.4);
+    filter: brightness(1.1);
+  }
+  
+  a:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(54, 64, 206, 0.3);
+  }
+}

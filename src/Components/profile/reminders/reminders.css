@@ -1,0 +1,224 @@
+.reminders {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.reminder-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.summary-card {
+  background: linear-gradient(135deg, #f7f8ff, #ffffff);
+  border: 1px solid rgba(54, 64, 206, 0.08);
+  border-radius: 18px;
+  padding: 1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.summary-card span {
+  color: #6b7280;
+  font-size: 0.88rem;
+}
+
+.summary-card strong {
+  color: var(--section-head-color);
+  font-size: 1.65rem;
+}
+
+.next-reminders {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.next-reminder-card {
+  border-radius: 20px;
+  padding: 1.2rem 1.25rem;
+  color: #fff;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.next-reminder-card.dose {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+.next-reminder-card.booking {
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+}
+
+.next-reminder-card .eyebrow {
+  display: inline-block;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.85;
+  margin-bottom: 0.6rem;
+}
+
+.next-reminder-card h4 {
+  margin: 0 0 0.35rem;
+  font-size: 1.2rem;
+}
+
+.next-reminder-card p {
+  margin: 0 0 0.9rem;
+  opacity: 0.92;
+}
+
+.mini-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.mini-meta span {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+}
+
+.reminders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.reminder-block {
+  background: #fff;
+  border: 1px solid rgba(54, 64, 206, 0.08);
+  border-radius: 20px;
+  padding: 1.1rem;
+  box-shadow: 0 8px 24px rgba(54, 64, 206, 0.05);
+}
+
+.reminder-block-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.reminder-block-head h3 {
+  margin: 0;
+  color: var(--section-head-color);
+  font-size: 1.05rem;
+}
+
+.reminder-pill {
+  min-width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0 0.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.reminder-pill.dose {
+  background: #4f46e5;
+}
+
+.reminder-pill.booking {
+  background: #0f766e;
+}
+
+.reminder-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.reminder-card {
+  border: 1px solid rgba(54, 64, 206, 0.08);
+  border-radius: 16px;
+  padding: 0.95rem 1rem;
+  background: linear-gradient(180deg, #ffffff, #fbfcff);
+}
+
+.reminder-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.reminder-card-top strong {
+  color: var(--section-head-color);
+}
+
+.state {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.state.warn {
+  background: rgba(245, 158, 11, 0.12);
+  color: #b45309;
+}
+
+.state.done {
+  background: rgba(5, 150, 105, 0.12);
+  color: #059669;
+}
+
+.state.danger {
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+}
+
+.state.info {
+  background: rgba(37, 99, 235, 0.12);
+  color: #2563eb;
+}
+
+.reminder-card p {
+  margin: 0 0 0.75rem;
+  color: #64748b;
+}
+
+.reminder-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.reminder-meta span {
+  font-size: 0.8rem;
+  color: #475569;
+  background: #f8fafc;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+}
+
+.reminder-empty {
+  background: #f8fafc;
+  border: 1px dashed rgba(54, 64, 206, 0.15);
+  border-radius: 16px;
+  padding: 1.25rem;
+  color: #64748b;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .reminder-summary,
+  .next-reminders,
+  .reminders-grid {
+    grid-template-columns: 1fr;
+  }
+}

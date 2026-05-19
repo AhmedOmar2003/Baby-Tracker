@@ -1,0 +1,10 @@
+.addInfo {
+  width: fit-content;
+  padding: 0.625rem 1.875rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: var(--main-color);
+  color: white;
+  font-size: 1.125rem;
+}

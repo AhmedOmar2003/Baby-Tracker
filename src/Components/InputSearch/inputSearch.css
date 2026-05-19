@@ -1,0 +1,36 @@
+.inputSearch {
+  width: 100%;
+  .container {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1.5625rem;
+    input {
+      flex-basis: calc(20% - 1.25rem);
+      padding: .625rem 1.5625rem;
+      border: 1px solid var(--main-color);
+      caret-color: var(--main-color);
+      &:focus {
+        outline: var(--main-color);
+      }
+    }
+    button {
+      padding: .625rem 1.25rem;
+      border: none;
+      cursor: pointer;
+      background-color: var(--main-color);
+      color: white;
+      font-weight: bold;
+    }
+  }
+}
+@media(max-width: 935px) {
+  .inputSearch {
+    .container {
+      flex-direction: column;
+    }
+    button {
+      flex-basis: 50%;
+    }
+  }
+}

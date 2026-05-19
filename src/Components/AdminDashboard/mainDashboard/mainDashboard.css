@@ -1,0 +1,154 @@
+.main-dashboard-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.main-dashboard {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+  
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--section-head-color, #1a1a2e);
+    margin: 0 0 0.5rem;
+  }
+  
+  p {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  box-shadow: 0 4px 15px rgba(54, 64, 206, 0.05);
+  border: 1px solid rgba(54, 64, 206, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(54, 64, 206, 0.12);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    opacity: 0.8;
+  }
+}
+
+.stat-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.stat-info {
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--section-head-color, #1a1a2e);
+    margin: 0 0 0.2rem;
+    line-height: 1.2;
+  }
+  
+  p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #888;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* ── Colors for specific cards ── */
+.stat-card.users {
+  &::before { background: #10b981; }
+  .stat-icon-wrapper {
+    background: rgba(16, 185, 129, 0.12);
+    color: #10b981;
+  }
+}
+
+.stat-card.doctors {
+  &::before { background: var(--main-color, #3640ce); }
+  .stat-icon-wrapper {
+    background: rgba(54, 64, 206, 0.12);
+    color: var(--main-color, #3640ce);
+  }
+}
+
+.stat-card.articles {
+  &::before { background: #f59e0b; }
+  .stat-icon-wrapper {
+    background: rgba(245, 158, 11, 0.12);
+    color: #f59e0b;
+  }
+}
+
+.stat-card.medicines {
+  &::before { background: #e91e63; }
+  .stat-icon-wrapper {
+    background: rgba(233, 30, 99, 0.12);
+    color: #e91e63;
+  }
+}
+
+.stat-card.vaccines {
+  &::before { background: #8b5cf6; }
+  .stat-icon-wrapper {
+    background: rgba(139, 92, 246, 0.12);
+    color: #8b5cf6;
+  }
+}
+
+.stat-card.reservations {
+  &::before { background: #0ea5e9; }
+  .stat-icon-wrapper {
+    background: rgba(14, 165, 233, 0.12);
+    color: #0ea5e9;
+  }
+}
+
+.stat-card.children {
+  &::before { background: #f97316; }
+  .stat-icon-wrapper {
+    background: rgba(249, 115, 22, 0.12);
+    color: #f97316;
+  }
+}

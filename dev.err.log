@@ -1,0 +1,27 @@
+ ⨯ ./src/app/doctors/page.jsx
+Error:   [31mx[0m `ssr: false` is not allowed with `next/dynamic` in Server Components. Please move it into a client component.
+    ,-[[36;1;4mD:\Baby-Tracker-Frontend-master\src\app\doctors\page.jsx[0m:4:1]
+ [2m 1[0m |     import dynamic from 'next/dynamic';
+ [2m 2[0m |     import { host } from '@/Components/utils/Host';
+ [2m 3[0m |     
+ [2m 4[0m | [35;1m,[0m[35;1m-[0m[35;1m>[0m const Banner = dynamic(
+ [2m 5[0m | [35;1m|[0m     () => import('@/Components/BannerContent/Banner/BannerDoctor'),
+ [2m 6[0m | [35;1m|[0m     {
+ [2m 7[0m | [35;1m|[0m       ssr: false,
+ [2m 8[0m | [35;1m|[0m       loading: () => (
+ [2m 9[0m | [35;1m|[0m         <div style={{ minHeight: '40vh', display: 'grid', placeItems: 'center' }}>
+ [2m10[0m | [35;1m|[0m           <p>Loading doctors...</p>
+ [2m11[0m | [35;1m|[0m         </div>
+ [2m12[0m | [35;1m|[0m       ),
+ [2m13[0m | [35;1m|[0m     }
+ [2m14[0m | [35;1m`[0m[35;1m-[0m[35;1m>[0m );
+ [2m15[0m |     
+ [2m16[0m |     export default function Doctors() {
+ [2m17[0m |       return (
+    `----
+
+Import trace for requested module:
+./src/app/doctors/page.jsx
+ ⚠ Found a change in next.config.mjs. Restarting the server to apply the changes...
+ ⚠ Found a change in next.config.mjs. Restarting the server to apply the changes...
+ ⚠ Found a change in next.config.mjs. Restarting the server to apply the changes...

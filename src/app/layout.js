@@ -29,7 +29,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="en">
       <body className={cairoFont.variable}>
         <ClientShell>{children}</ClientShell>
       </body>

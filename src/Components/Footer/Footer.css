@@ -81,7 +81,7 @@
 }
 .footer-links li a:hover {
   color: #3640ce;
-  transform: translateX(-4px);
+  transform: translateX(4px);
 }
 
 .fl-icon {

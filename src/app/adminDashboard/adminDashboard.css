@@ -171,7 +171,7 @@
 /* Show/hide password button */
 .adm-eye-btn {
   position: absolute;
-  right: 0.9rem;
+  right: 1.25rem;
   background: none;
   border: none;
   color: rgba(255,255,255,0.35);
